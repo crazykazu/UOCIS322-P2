@@ -10,8 +10,6 @@ app = Flask(__name__)
 def open(page):
     if ('//' in page) or ('~' in page) or ('..' in page):
         abort(403)
-    else:
-        return render_template(page), 200
 
 @app.errorhandler(404)
 def not_found(e):
