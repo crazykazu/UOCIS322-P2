@@ -10,7 +10,7 @@ app = Flask(__name__)
 def open(page):
     if ('//' in page) or ('~' in page) or ('..' in page):
         abort(403)
-    return send_from_directory('pages')
+    return send_from_directory('pages', page)
 
 @app.errorhandler(404)
 def not_found(e):
